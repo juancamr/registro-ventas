@@ -36,15 +36,6 @@ CREATE TABLE IF NOT EXISTS boleta (
     CONSTRAINT fk_reporte FOREIGN KEY (id_reporte) REFERENCES reporte(id_reporte)
 ) Engine=InnoDb;
 
-CREATE TABLE IF NOT EXISTS detalle_boleta (
-    id_producto INT PRIMARY KEY auto_increment,
-    id_boleta INT,
-    cantidad INT,
-    monto_total DECIMAL(20),
-    indicador VARCHAR(2),
-    CONSTRAINT fk_boleta foreign KEY (id_boleta) references boleta(id_boleta)
-) Engine=InnoDB;
-
 CREATE TABLE IF NOT EXISTS producto (
     id_producto INT PRIMARY KEY auto_increment, 
     id_proveedor INT,
@@ -56,4 +47,15 @@ CREATE TABLE IF NOT EXISTS producto (
     stock INT,
     indicador VARCHAR(2),
     constraINT fk_proveedor foreign KEY (id_proveedor) references proveedor(id_proveedor)
+) Engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS detalle_boleta (
+    id_detalle_boleta int primary key auto_increment,
+    id_producto INT,
+    id_boleta INT,
+    cantidad INT,
+    monto_total DECIMAL(20),
+    indicador VARCHAR(2),
+    CONSTRAINT fk_producto foreign key (id_producto) references producto(id_producto),
+    CONSTRAINT fk_boleta foreign KEY (id_boleta) references boleta(id_boleta)
 ) Engine=InnoDB;
