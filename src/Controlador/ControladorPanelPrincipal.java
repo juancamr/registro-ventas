@@ -33,6 +33,9 @@ public class ControladorPanelPrincipal implements ActionListener {
         vista.jbtnRepuestos.addActionListener(this);
         vista.jbtnHome.addActionListener(this);
         new ControladorHome(vista, new PanelHome());
+    }
+    
+    public void screen() {
         FormatoPanelPrincipal.Presentacion(vista);
     }
     

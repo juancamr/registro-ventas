@@ -16,6 +16,7 @@ public class Main {
     public static void main(String[] Stringargs) {
         VentanaPrincipal ventana = new VentanaPrincipal();
         ControladorPanelPrincipal controller = new ControladorPanelPrincipal(ventana);
+        controller.screen();
     }
     
 }
