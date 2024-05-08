@@ -28,7 +28,6 @@ public class FrameUtils {
     
     // for session window
     public static void showPanel(VentanaSesion vista, JPanel panel) {
-        System.out.println(vista);
         panel.setSize(380, 770);
         panel.setLocation(0, 0);
         vista.content.removeAll();

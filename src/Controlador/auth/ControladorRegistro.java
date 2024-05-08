@@ -7,29 +7,33 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import utils.FrameUtils;
 
-public class ControladorLogin implements ActionListener {
+public class ControladorRegistro implements ActionListener {
+
     VentanaSesion vista;
-    PanelLogin panel;
-    
-    public ControladorLogin(VentanaSesion v, PanelLogin pan) {
+    PanelRegister panel;
+
+    public ControladorRegistro(VentanaSesion v, PanelRegister pan) {
         vista = v;
         panel = pan;
+        panel.jbtnInicioSesion.addActionListener(this);
         panel.jbtnRegistro.addActionListener(this);
         FrameUtils.showPanel(vista, panel);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == panel.jbtnRegistro) {
-            new ControladorRegistro(vista, new PanelRegister());
+        if (e.getSource() == panel.jbtnInicioSesion) {
+            new ControladorLogin(vista, new PanelLogin());
         }
-        
-        if (e.getSource() == panel.jbtnIniciar) {
+
+        if (e.getSource() == panel.jbtnRegistro) {
+            String nombres = panel.jtxtNombresCompletos.getText();
             String userName = panel.jtxtNombreUsuario.getText();
             char[] password = panel.jPassword.getPassword();
             System.out.println(userName);
             System.out.println(password);
+            System.out.println(nombres);
         }
     }
-    
+
 }
