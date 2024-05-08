@@ -6,6 +6,7 @@ import DAO.*;
 import Vista.*;
 import Formato.*;
 import java.awt.Color;
+import java.util.List;
 
 public class ControladorProducto implements ActionListener{
     PanelProducto panel;
@@ -23,6 +24,11 @@ public class ControladorProducto implements ActionListener{
         panel.jbtnDelete.addActionListener(this);
         FormatoProductos.cargarComboProveedores(panel.jcbxProveedorBusqueda);
         FormatoProductos.cargarComboProveedores(panel.jcbxProveedorRegistro);
+        List<Producto> listaProductos = crudProducto.getAllProducts();
+        for (Producto producto : listaProductos) {
+            System.out.println(producto.getIdProducto());
+        }
+        
         if (flag) {
             buscarProducto(codigo);
         }
