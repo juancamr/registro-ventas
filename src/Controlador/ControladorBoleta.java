@@ -35,7 +35,7 @@ public class ControladorBoleta implements ActionListener {
         for (int i = 0; i < Main.listaDetallesBoleta.size(); i++) {
             modelo.addRow(Main.listaDetallesBoleta.get(i).registroDatos());
         }
-        Formato.ManejadorTabla.formatoTablaBoleta(vista.jtblCompras);
+        utils.ManejadorTabla.formatoTablaBoleta(vista.jtblCompras);
         FormatoBoleta.Presentacion(vista);
     }
 

@@ -13,8 +13,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
     Color base = new Color(20,23,31);
     Color focus = new Color(55, 58, 64);
-    Color foregroundColorFocus = new Color(255, 255, 254);
-    Color foregroundColorBase = new Color(170,170,170);
     
     boolean botonHome = true;
     boolean botonNuevaVenta = false;

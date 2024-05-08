@@ -1,7 +1,7 @@
 package Controlador;
 import DAO.CRUDProductos;
 import Formato.FormatoProductosSinStock;
-import Formato.ManejadorTabla;
+import utils.ManejadorTabla;
 import Principal.Main;
 import Vista.VentanaProductosSinStock;
 import java.awt.event.ActionEvent;

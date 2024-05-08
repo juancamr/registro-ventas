@@ -1,7 +1,7 @@
 package Controlador;
 import DAO.CRUDReporte;
 import Formato.FormatoConsultarReporte;
-import Formato.ManejadorTabla;
+import utils.ManejadorTabla;
 import Formato.Messages;
 import Principal.Main;
 import java.awt.event.ActionEvent;
@@ -19,7 +19,7 @@ public class ControladorConsultarReporte implements ActionListener {
         panel.jbtnBuscarReportes.addActionListener(this);
         modelo = new DefaultTableModel(null, FormatoConsultarReporte.titulos);
         panel.jtblTablaReportes.setModel(modelo);
-        Formato.ManejadorTabla.formatoTablaConsultarReporte(panel.jtblTablaReportes);
+        utils.ManejadorTabla.formatoTablaConsultarReporte(panel.jtblTablaReportes);
         ManejadorTabla.formatoTablaConsultarReporte(panel.jtblTablaReportes);
         FormatoConsultarReporte.Presentacion(vista, panel);
     }

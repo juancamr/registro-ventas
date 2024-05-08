@@ -1,4 +1,5 @@
 package Controlador;
+import utils.ManejadorTabla;
 import DAO.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

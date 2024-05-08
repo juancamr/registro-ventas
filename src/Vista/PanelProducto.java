@@ -52,16 +52,8 @@ public class PanelProducto extends javax.swing.JPanel {
         jcbxMarcaBusqueda = new javax.swing.JComboBox<>();
         jcbxProveedorBusqueda = new javax.swing.JComboBox<>();
         jSeparator3 = new javax.swing.JSeparator();
-        jLabel22 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jbtnAumentar = new javax.swing.JButton();
-        jtxtCodigoAumento = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        jSeparator14 = new javax.swing.JSeparator();
-        jLabel21 = new javax.swing.JLabel();
-        jtxtStockAumento = new javax.swing.JTextField();
-        jSeparator15 = new javax.swing.JSeparator();
-        jlblExitoAumento = new javax.swing.JLabel();
+        jbtnTodosLosProductos = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jtxtCodigoRegistro = new javax.swing.JTextField();
@@ -241,57 +233,13 @@ public class PanelProducto extends javax.swing.JPanel {
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 330, 10));
 
-        jLabel22.setFont(new java.awt.Font("Malgun Gothic", 0, 24)); // NOI18N
-        jLabel22.setText("Aumento de stock");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 523, -1, 40));
-
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jbtnAumentar.setBackground(new java.awt.Color(20, 23, 31));
-        jbtnAumentar.setFont(new java.awt.Font("Malgun Gothic", 0, 18)); // NOI18N
-        jbtnAumentar.setForeground(new java.awt.Color(241, 240, 243));
-        jbtnAumentar.setText("AUMENTAR");
-        jPanel4.add(jbtnAumentar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 160, 40));
-
-        jtxtCodigoAumento.setFont(new java.awt.Font("Malgun Gothic", 0, 14)); // NOI18N
-        jtxtCodigoAumento.setBorder(null);
-        jtxtCodigoAumento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtCodigoAumentoActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jtxtCodigoAumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 200, 30));
-
-        jLabel20.setFont(new java.awt.Font("Malgun Gothic", 0, 16)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(105, 105, 118));
-        jLabel20.setText("Codigo");
-        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 30));
-
-        jSeparator14.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel4.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 200, 20));
-
-        jLabel21.setFont(new java.awt.Font("Malgun Gothic", 0, 16)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(105, 105, 118));
-        jLabel21.setText("Stock");
-        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 50, 30));
-
-        jtxtStockAumento.setFont(new java.awt.Font("Malgun Gothic", 0, 14)); // NOI18N
-        jtxtStockAumento.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jtxtStockAumento.setBorder(null);
-        jtxtStockAumento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtStockAumentoActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jtxtStockAumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 80, 30));
-
-        jSeparator15.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel4.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 80, 20));
-
-        jlblExitoAumento.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
-        jlblExitoAumento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel4.add(jlblExitoAumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 320, 40));
+        jbtnTodosLosProductos.setBackground(new java.awt.Color(255, 255, 254));
+        jbtnTodosLosProductos.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
+        jbtnTodosLosProductos.setText("VER TODOS");
+        jPanel4.add(jbtnTodosLosProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 130, 30));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 400, 240));
 
@@ -491,14 +439,6 @@ public class PanelProducto extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtPrecioVentaBusquedaActionPerformed
 
-    private void jtxtCodigoAumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCodigoAumentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtCodigoAumentoActionPerformed
-
-    private void jtxtStockAumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtStockAumentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtStockAumentoActionPerformed
-
     private void jtxtCodigoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCodigoRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtCodigoRegistroActionPerformed
@@ -549,9 +489,6 @@ public class PanelProducto extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -566,8 +503,6 @@ public class PanelProducto extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
-    private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -576,18 +511,16 @@ public class PanelProducto extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JButton jbtnAgregar;
-    public javax.swing.JButton jbtnAumentar;
     public javax.swing.JButton jbtnBuscarProducto;
     public javax.swing.JButton jbtnDelete;
     public javax.swing.JButton jbtnEditar;
+    public javax.swing.JButton jbtnTodosLosProductos;
     public javax.swing.JComboBox<String> jcbxMarcaBusqueda;
     public javax.swing.JComboBox<String> jcbxMarcaRegistro;
     public javax.swing.JComboBox<String> jcbxProveedorBusqueda;
     public javax.swing.JComboBox<String> jcbxProveedorRegistro;
     public javax.swing.JLabel jlblExito;
-    public javax.swing.JLabel jlblExitoAumento;
     private javax.swing.JPanel jpnlInterfaz;
-    public javax.swing.JTextField jtxtCodigoAumento;
     public javax.swing.JTextField jtxtCodigoBusqueda;
     public javax.swing.JTextField jtxtCodigoRegistro;
     public javax.swing.JTextField jtxtCostoBusqueda;
@@ -597,7 +530,6 @@ public class PanelProducto extends javax.swing.JPanel {
     public javax.swing.JTextField jtxtNombreRegistro;
     public javax.swing.JTextField jtxtPrecioVentaBusqueda;
     public javax.swing.JTextField jtxtPrecioVentaRegistro;
-    public javax.swing.JTextField jtxtStockAumento;
     public javax.swing.JTextField jtxtStockBusqueda;
     public javax.swing.JTextField jtxtStockRegistro;
     // End of variables declaration//GEN-END:variables

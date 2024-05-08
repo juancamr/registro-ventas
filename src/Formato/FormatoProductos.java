@@ -101,10 +101,4 @@ public class FormatoProductos {
         panel.jtxtStockBusqueda.setText("");
         panel.jtxtCodigoBusqueda.requestFocus();
     }
-    
-    public static void limpiarEntradasAumento(PanelProducto panel) {
-        panel.jtxtCodigoAumento.setText("");
-        panel.jtxtStockAumento.setText("");
-        panel.jtxtCodigoAumento.requestFocus();
-    }
 }

@@ -1,10 +1,11 @@
-package Formato;
+package utils;
 
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumn;
 
 public class ManejadorTabla {
     static Color white = new Color(255, 255, 254);
@@ -56,5 +57,17 @@ public class ManejadorTabla {
         establecerFormatoTabla(tabla, 0, 200, false); //codigo
         establecerFormatoTabla(tabla, 1, 500, false); //descripcion
         establecerFormatoTabla(tabla, 2, 100, true); //stock
+    }
+    public static void formatoTablaTodosLosProductos(JTable tabla) {
+        TableColumn ac = new TableColumn();
+        tabla.addColumn(ac);
+        tabla.addColumn(ac);
+        //metodo que usa el metodo anterior para dar formato a la tabla boleta
+        establecerFormatoTabla(tabla, 0, 200, true); //codigo
+        establecerFormatoTabla(tabla, 1, 500, false); //nombre
+        establecerFormatoTabla(tabla, 2, 200, true);//precio costo
+        establecerFormatoTabla(tabla, 3, 200, true); //precio venta
+        establecerFormatoTabla(tabla, 4, 500, false); //proveedor
+        establecerFormatoTabla(tabla, 5, 200, true); //stock
     }
 }

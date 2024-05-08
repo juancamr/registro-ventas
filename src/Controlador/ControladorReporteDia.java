@@ -18,7 +18,7 @@ public class ControladorReporteDia implements ActionListener {
         panel = pan;
         modelo = new DefaultTableModel(null, FormatoReporteDia.titulosTabla);
         panel.jtblTablaBoletas.setModel(modelo);
-        Formato.ManejadorTabla.formatoTablaReportesDia(panel.jtblTablaBoletas);
+        utils.ManejadorTabla.formatoTablaReportesDia(panel.jtblTablaBoletas);
         FormatoReporteDia.Presentacion(vista, panel);
         int idReporte = crudReporte.obtenerIdReporteToday();
         if (idReporte != 0) {

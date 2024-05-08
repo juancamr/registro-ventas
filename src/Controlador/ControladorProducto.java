@@ -19,15 +19,11 @@ public class ControladorProducto implements ActionListener{
         panel = pan;
         panel.jbtnBuscarProducto.addActionListener(this);
         panel.jbtnAgregar.addActionListener(this);
-        panel.jbtnAumentar.addActionListener(this);
         panel.jbtnEditar.addActionListener(this);
         panel.jbtnDelete.addActionListener(this);
+        panel.jbtnTodosLosProductos.addActionListener(this);
         FormatoProductos.cargarComboProveedores(panel.jcbxProveedorBusqueda);
         FormatoProductos.cargarComboProveedores(panel.jcbxProveedorRegistro);
-        List<Producto> listaProductos = crudProducto.getAllProducts();
-        for (Producto producto : listaProductos) {
-            System.out.println(producto.getIdProducto());
-        }
         
         if (flag) {
             buscarProducto(codigo);
@@ -103,27 +99,8 @@ public class ControladorProducto implements ActionListener{
             }
         }
         
-        if (e.getSource() == panel.jbtnAumentar) {
-            if (panel.jtxtCodigoAumento.getText().equals("")) {
-                Messages.show("Ingrese un codigo");
-                panel.jtxtCodigoAumento.requestFocus();
-            } else {
-                try {
-                    int idProducto = crudProducto.obtenerIdProducto(panel.jtxtCodigoAumento.getText());
-                    if (idProducto == 0) {
-                        Messages.show("El producto no existe");
-                        FormatoProductos.limpiarEntradasAumento(panel);
-                    } else {
-                        crudProducto.ingresarInventario(idProducto, Integer.parseInt(panel.jtxtStockAumento.getText()));
-                        panel.jlblExitoAumento.setText("Stock de " + panel.jtxtCodigoAumento.getText() + " actualizado con exito!");
-                        FormatoProductos.limpiarEntradasAumento(panel);
-                    }
-                } catch (NumberFormatException exception) {
-                    Messages.show("Error de dato, el stock debe ser un numero entero");
-                    panel.jtxtStockAumento.setText("");
-                    panel.jtxtStockAumento.requestFocus();
-                }
-            }
+        if (e.getSource() == panel.jbtnTodosLosProductos) {
+            new ControladorVentanaProducto(new VentanaProductos());
         }
         
         if(e.getSource()==panel.jbtnAgregar){
