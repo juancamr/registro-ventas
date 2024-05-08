@@ -15,6 +15,7 @@ public class ControladorLogin implements ActionListener {
         vista = v;
         panel = pan;
         panel.jbtnRegistro.addActionListener(this);
+        panel.jbtnIniciar.addActionListener(this);
         FrameUtils.showPanel(vista, panel);
     }
 
@@ -26,9 +27,8 @@ public class ControladorLogin implements ActionListener {
         
         if (e.getSource() == panel.jbtnIniciar) {
             String userName = panel.jtxtNombreUsuario.getText();
-            char[] password = panel.jPassword.getPassword();
-            System.out.println(userName);
-            System.out.println(password);
+            String password = String.valueOf(panel.jPassword.getPassword());
+            
         }
     }
     

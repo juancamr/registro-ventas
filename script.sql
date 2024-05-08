@@ -59,3 +59,10 @@ CREATE TABLE IF NOT EXISTS detalle_boleta (
     CONSTRAINT fk_producto foreign key (id_producto) references producto(id_producto),
     CONSTRAINT fk_boleta foreign KEY (id_boleta) references boleta(id_boleta)
 ) Engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS administrador (
+    id_admin INT PRIMARY KEY auto_increment,
+    nombres VARCHAR(30), 
+    password VARCHAR(60)
+)
+
