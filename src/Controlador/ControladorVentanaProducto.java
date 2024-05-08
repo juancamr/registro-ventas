@@ -53,7 +53,7 @@ public final class ControladorVentanaProducto implements ActionListener {
             }
         });
         setDataInTable(listaProductos);
-        utils.ManejadorTabla.formatoTablaTodosLosProductos(vista.jtblProductos);
+        utils.TablaUtils.formatoTablaTodosLosProductos(vista.jtblProductos);
         FrameUtils.showWindow(vista, "Buscar productos");
     }
     

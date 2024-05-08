@@ -1,7 +1,9 @@
 package Principal;
+import Controlador.auth.ControladorInicio;
 import Controlador.ControladorPanelPrincipal;
 import Modelo.*;
 import Vista.*;
+import Vista.auth.VentanaSesion;
 import java.util.ArrayList;
 
 public class Main {
@@ -14,9 +16,7 @@ public class Main {
     public static ArrayList<Producto> listaProductosSinStock;
 
     public static void main(String[] Stringargs) {
-        VentanaPrincipal ventana = new VentanaPrincipal();
-        ControladorPanelPrincipal controller = new ControladorPanelPrincipal(ventana);
-        controller.screen();
+        new ControladorInicio(new VentanaSesion());
     }
     
 }

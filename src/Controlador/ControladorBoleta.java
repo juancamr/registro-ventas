@@ -9,7 +9,7 @@ import Modelo.Boleta;
 import Principal.Main;
 import java.text.DecimalFormat;
 import utils.FrameUtils;
-import utils.ManejadorTabla;
+import utils.TablaUtils;
 
 public class ControladorBoleta implements ActionListener {
     VentanaBoleta vista;
@@ -37,7 +37,7 @@ public class ControladorBoleta implements ActionListener {
         for (int i = 0; i < Main.listaDetallesBoleta.size(); i++) {
             modelo.addRow(Main.listaDetallesBoleta.get(i).registroDatos());
         }
-        ManejadorTabla.formatoTablaBoleta(vista.jtblCompras);
+        TablaUtils.formatoTablaBoleta(vista.jtblCompras);
         FrameUtils.showWindow(vista, "Boleta de venta");
     }
 

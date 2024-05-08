@@ -1,6 +1,6 @@
 package Controlador;
 import DAO.CRUDProductos;
-import utils.ManejadorTabla;
+import utils.TablaUtils;
 import Principal.Main;
 import Vista.VentanaProductosSinStock;
 import java.awt.event.ActionEvent;
@@ -24,7 +24,7 @@ public class ControladorProductosSinStock implements ActionListener {
                 modelo.addRow(Main.listaProductosSinStock.get(i).registroDatosStock());
             }
         }
-        ManejadorTabla.formatoTablaProductosSinStock(vista.jtblProductos);
+        TablaUtils.formatoTablaProductosSinStock(vista.jtblProductos);
         FrameUtils.showWindow(vista, "Productos sin stock");
     }
 

@@ -43,7 +43,7 @@ public class ControladorNuevaVenta implements ActionListener {
         panel.jbtnClear.addActionListener(this);
         modelo = new DefaultTableModel(null, titulosTabla);
         panel.jtblCompras.setModel(modelo);
-        utils.ManejadorTabla.formatoTablaBoleta(panel.jtblCompras);
+        utils.TablaUtils.formatoTablaBoleta(panel.jtblCompras);
         FormatoNuevaVenta.startBoletaValues(vista, panel);
         FrameUtils.showPanel(vista, panel);
         panel.jtxtDniBusqueda.requestFocus();

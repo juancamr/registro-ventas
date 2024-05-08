@@ -7,7 +7,7 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 
-public class ManejadorTabla {
+public class TablaUtils {
     static Color white = new Color(255, 255, 254);
     static Color black = new Color(35,38,46);
     static Color grey = new Color(105,105,118);

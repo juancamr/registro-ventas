@@ -1,6 +1,6 @@
 package Controlador;
 import utils.Messages;
-import utils.ManejadorTabla;
+import utils.TablaUtils;
 import DAO.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +26,7 @@ public class ControladorConsultaBoleta implements ActionListener {
         modelo = new DefaultTableModel(null, titulos);
         panel.jbtnBuscarBoletas.addActionListener(this);
         panel.jtblTablaBoletas.setModel(modelo);
-        ManejadorTabla.formatoTablaConsultarBoleta(panel.jtblTablaBoletas);
+        TablaUtils.formatoTablaConsultarBoleta(panel.jtblTablaBoletas);
         panel.jtblTablaBoletas.setBackground(Color.WHITE);
         FrameUtils.showPanel(vista, panel);
         panel.jtxtDniCliente.requestFocus();
