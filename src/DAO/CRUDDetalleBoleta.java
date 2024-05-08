@@ -1,6 +1,6 @@
 package DAO;
 
-import Formato.Messages;
+import utils.Messages;
 import Modelo.DetalleBoleta;
 import Principal.Main;
 import java.util.ArrayList;

@@ -7,19 +7,21 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import Vista.*;
 import java.text.DecimalFormat;
+import utils.FrameUtils;
 
 public class ControladorReporteDia implements ActionListener {
     PanelReporteDia panel;
     DefaultTableModel modelo;
     CRUDReporte crudReporte = new CRUDReporte();
     CRUDBoleta crudBoleta = new CRUDBoleta();
+    public static String[] titulosTabla = {"Nro Boleta", "Nombre Cliente", "Monto"};
     
     public ControladorReporteDia(VentanaPrincipal vista, PanelReporteDia pan) {
         panel = pan;
-        modelo = new DefaultTableModel(null, FormatoReporteDia.titulosTabla);
+        modelo = new DefaultTableModel(null, titulosTabla);
         panel.jtblTablaBoletas.setModel(modelo);
         utils.ManejadorTabla.formatoTablaReportesDia(panel.jtblTablaBoletas);
-        FormatoReporteDia.Presentacion(vista, panel);
+        FrameUtils.showPanel(vista, panel);
         int idReporte = crudReporte.obtenerIdReporteToday();
         if (idReporte != 0) {
             crudBoleta.llenarListaBoletasParaReporte(idReporte);

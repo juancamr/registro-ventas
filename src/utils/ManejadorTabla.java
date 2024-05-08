@@ -60,8 +60,6 @@ public class ManejadorTabla {
     }
     public static void formatoTablaTodosLosProductos(JTable tabla) {
         TableColumn ac = new TableColumn();
-        tabla.addColumn(ac);
-        tabla.addColumn(ac);
         //metodo que usa el metodo anterior para dar formato a la tabla boleta
         establecerFormatoTabla(tabla, 0, 200, true); //codigo
         establecerFormatoTabla(tabla, 1, 500, false); //nombre

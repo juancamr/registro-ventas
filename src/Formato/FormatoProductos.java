@@ -9,15 +9,6 @@ import javax.swing.JComboBox;
 
 public class FormatoProductos {
     
-     public static void Presentacion(VentanaPrincipal vista, PanelProducto panel){
-        panel.setSize(840, 790);
-        panel.setLocation(0, 0);        
-        vista.content.removeAll();
-        vista.content.add(panel, BorderLayout.CENTER);
-        vista.content.revalidate();
-        vista.content.repaint();
-    }
-    
     public static void cargarComboProveedores(JComboBox combo) {
         ActualizarListas al = new ActualizarListas();
         al.actualizarListaProveedores();

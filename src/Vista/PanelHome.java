@@ -7,7 +7,7 @@ package Vista;
 import Controlador.*;
 import DAO.CRUDBoleta;
 import DAO.CRUDProductos;
-import Formato.Messages;
+import utils.Messages;
 import Modelo.Producto;
 import java.awt.Desktop;
 import java.awt.Font;

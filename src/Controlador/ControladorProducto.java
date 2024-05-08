@@ -1,4 +1,5 @@
 package Controlador;
+import utils.Messages;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.*;
@@ -7,6 +8,7 @@ import Vista.*;
 import Formato.*;
 import java.awt.Color;
 import java.util.List;
+import utils.FrameUtils;
 
 public class ControladorProducto implements ActionListener{
     PanelProducto panel;
@@ -28,7 +30,7 @@ public class ControladorProducto implements ActionListener{
         if (flag) {
             buscarProducto(codigo);
         }
-        FormatoProductos.Presentacion(vista, panel);
+        FrameUtils.showPanel(vista, panel);
         panel.jtxtCodigoBusqueda.requestFocus();
     }
     

@@ -5,16 +5,7 @@ import Vista.PanelClientes;
 import Vista.VentanaPrincipal;
 import java.awt.BorderLayout;
 
-public class FormatoCliente {
-    public static void presentacion(VentanaPrincipal vista, PanelClientes panel) {
-        panel.setSize(840, 790);
-        panel.setLocation(0, 0);        
-        vista.content.removeAll();
-        vista.content.add(panel, BorderLayout.CENTER);
-        vista.content.revalidate();
-        vista.content.repaint();
-    }
-    
+public class FormatoCliente {    
     public static void isFocusable(PanelClientes panel, boolean flag) {
         panel.jtxtNombreCliente.setFocusable(flag);
         panel.jtxtDireccionCliente.setFocusable(flag);

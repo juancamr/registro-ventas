@@ -1,21 +1,22 @@
 package Controlador;
 import DAO.CRUDProductos;
-import Formato.FormatoProductosSinStock;
 import utils.ManejadorTabla;
 import Principal.Main;
 import Vista.VentanaProductosSinStock;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
+import utils.FrameUtils;
 
 public class ControladorProductosSinStock implements ActionListener {
     VentanaProductosSinStock vista;
     DefaultTableModel modelo;
     CRUDProductos crudProducto = new CRUDProductos();
+    public static String[] titulos = {"Codigo", "Descripcion", "Stock"};
     
     public ControladorProductosSinStock(VentanaProductosSinStock v) {
         vista = v;
-        modelo = new DefaultTableModel(null, FormatoProductosSinStock.titulos);
+        modelo = new DefaultTableModel(null, titulos);
         vista.jtblProductos.setModel(modelo);
         crudProducto.llenarListaProductosSinStock();
         if (!Main.listaProductosSinStock.isEmpty()) {
@@ -24,7 +25,7 @@ public class ControladorProductosSinStock implements ActionListener {
             }
         }
         ManejadorTabla.formatoTablaProductosSinStock(vista.jtblProductos);
-        FormatoProductosSinStock.presentacion(vista);
+        FrameUtils.showWindow(vista, "Productos sin stock");
     }
 
     @Override

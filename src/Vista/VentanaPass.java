@@ -5,7 +5,7 @@
 package Vista;
 
 import Controlador.ControladorPanelPrincipal;
-import Formato.Messages;
+import utils.Messages;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;

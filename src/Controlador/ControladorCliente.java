@@ -3,11 +3,12 @@ import DAO.CRUDClientes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Formato.FormatoCliente;
-import Formato.Messages;
+import utils.Messages;
 import Modelo.Cliente;
 import Vista.PanelClientes;
 import Vista.VentanaPrincipal;
 import java.awt.Color;
+import utils.FrameUtils;
 
 public class ControladorCliente implements ActionListener {
     VentanaPrincipal vista;
@@ -22,7 +23,7 @@ public class ControladorCliente implements ActionListener {
         panel.jbtnAgregar.addActionListener(this);
         panel.jbtnBuscarCliente.addActionListener(this);
         panel.jbtnEditar.addActionListener(this);
-        FormatoCliente.presentacion(vista, panel);
+        FrameUtils.showPanel(vista, panel);
         panel.jtxtDniClienteAgregar.requestFocus();
         if (flag) {
             panel.jtxtDniClienteAgregar.setText(String.valueOf(dni));

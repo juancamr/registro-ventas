@@ -2,14 +2,15 @@
 package utils;
 
 import Vista.VentanaPrincipal;
+import Vista.VentanaProductosSinStock;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class FrameUtils {
     
-    public static void showWindow(JFrame vista) {
-        vista.setTitle("Boleta de Venta");
+    public static void showWindow(JFrame vista, String title) {
+        vista.setTitle(title);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }

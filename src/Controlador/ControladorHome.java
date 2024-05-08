@@ -2,16 +2,13 @@ package Controlador;
 import DAO.CRUDBoleta;
 import DAO.CRUDProductos;
 import DAO.CRUDReporte;
-import Formato.FormatoHome;
-import Formato.Messages;
 import Principal.Main;
 import Vista.PanelHome;
-import Vista.PanelProducto;
 import Vista.VentanaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
+import utils.FrameUtils;
 
 public class ControladorHome implements ActionListener {
     PanelHome panel;
@@ -61,7 +58,8 @@ public class ControladorHome implements ActionListener {
         } else {
             panel.jlblUltimaBoleta.setText("Sin ventas");
         }
-        FormatoHome.presentacion(vista, panel);
+        
+        FrameUtils.showPanel(vista, panel);
         panel.jtxtBuscarRepuesto.requestFocus();
     }
 

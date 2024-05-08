@@ -1,5 +1,5 @@
 package DAO;
-import Formato.Messages;
+import utils.Messages;
 import Modelo.Producto;
 import Principal.Main;
 import java.util.List;
@@ -200,6 +200,34 @@ public class CRUDProductos extends ConectarBD {
             rs.close();
         } catch (Exception e) {
             Messages.show("Error, no se pudo obtener el producto..." + e);
+        }
+        
+        return listaProductos;
+    }
+    
+    public List<Producto> findProductByNameOrCode(String query) {
+        List<Producto> listaProductos = new ArrayList();
+        String consulta = "SELECT * FROM producto WHERE nombre LIKE '%<query>%' OR codigo LIKE '%<query>%'";
+        consulta = consulta.replace("<query>", query);
+        CRUDProveedor crud = new CRUDProveedor();
+        
+        try {
+            rs = st.executeQuery(consulta);
+            while (rs.next()) {
+                Producto prod = new Producto();
+                prod.setIdProducto(rs.getInt(1));
+                prod.setProveedor(crud.obtenerProveedor(rs.getInt(2)));
+                prod.setCodigo(rs.getString(3));
+                prod.setMarca(rs.getString(4));
+                prod.setNombre(rs.getString(5));
+                prod.setCostoUnidad(rs.getDouble(6));
+                prod.setPrecioVenta(rs.getDouble(7));
+                prod.setStock(rs.getInt(8));
+                listaProductos.add(prod);
+            }
+            rs.close();
+        } catch (Exception e) {
+            Messages.show("We can't search in products, query by name or code");
         }
         
         return listaProductos;

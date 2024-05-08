@@ -4,7 +4,7 @@
  */
 package Vista;
 
-import Formato.Messages;
+import utils.Messages;
 
 /**
  *

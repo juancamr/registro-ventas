@@ -5,7 +5,6 @@
 package Controlador;
 
 import DAO.CRUDProductos;
-import Formato.FormatoBoleta;
 import Modelo.Producto;
 import Vista.VentanaProductos;
 import java.awt.event.ActionEvent;
@@ -17,16 +16,17 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import utils.FrameUtils;
 
-public class ControladorVentanaProducto implements ActionListener {
+public final class ControladorVentanaProducto implements ActionListener {
     VentanaProductos vista;
     CRUDProductos crudProducto = new CRUDProductos();
     DefaultTableModel modelo;
     public String[] titulosTabla = {"Código", "Nombre", "Precio Costo", "Precio venta", "Proveedor", "Stock"};
+    List<Producto> listaProductos = crudProducto.getAllProducts();
     
     public ControladorVentanaProducto(VentanaProductos v) {
         vista = v;
         JTextField inputCodigo = vista.jtxtCodigoBusqueda;
-        modelo = new DefaultTableModel(null, FormatoBoleta.titulos);
+        modelo = new DefaultTableModel(null, titulosTabla);
         vista.jtblProductos.setModel(modelo);
         inputCodigo.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -45,17 +45,22 @@ public class ControladorVentanaProducto implements ActionListener {
             }
 
             public void handleChange() {
-                System.out.println(inputCodigo.getText());
+                String query = inputCodigo.getText();
+                listaProductos.clear();
+                modelo.setRowCount(0);
+                listaProductos = crudProducto.findProductByNameOrCode(query);
+                setDataInTable(listaProductos);
             }
         });
-        
-        List<Producto> listaProductos = crudProducto.getAllProducts();
+        setDataInTable(listaProductos);
+        utils.ManejadorTabla.formatoTablaTodosLosProductos(vista.jtblProductos);
+        FrameUtils.showWindow(vista, "Buscar productos");
+    }
+    
+    public void setDataInTable(List<Producto> listaProductos) {
         for (Producto producto : listaProductos) {
-            System.out.println(producto.getCodigo());
             modelo.addRow(producto.showAll());
         }
-        utils.ManejadorTabla.formatoTablaTodosLosProductos(vista.jtblProductos);
-        FrameUtils.showWindow(vista);
     }
 
     @Override

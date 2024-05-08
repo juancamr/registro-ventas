@@ -4,7 +4,7 @@
  */
 package Vista;
 
-import Formato.Messages;
+import utils.Messages;
 import java.awt.Color;
 import Controlador.*;
 import java.awt.event.KeyEvent;

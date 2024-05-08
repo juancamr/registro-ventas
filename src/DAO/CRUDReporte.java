@@ -1,6 +1,6 @@
 package DAO;
 
-import Formato.Messages;
+import utils.Messages;
 import java.util.Date;
 import Modelo.Reporte;
 import Principal.Main;

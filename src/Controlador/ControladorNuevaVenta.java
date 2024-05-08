@@ -1,4 +1,5 @@
 package Controlador;
+import utils.Messages;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import Formato.FormatoNuevaVenta;
@@ -11,6 +12,7 @@ import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.Date;
+import utils.FrameUtils;
 
 public class ControladorNuevaVenta implements ActionListener {
     VentanaPrincipal vista;
@@ -26,6 +28,7 @@ public class ControladorNuevaVenta implements ActionListener {
     double montoTotal = 0;
     Cliente cli;
     Producto prod;
+    public static String[] titulosTabla = {"Cantidad", "Descripcion", "Precio Unid.", "Total"};
     
     public ControladorNuevaVenta (VentanaPrincipal v, PanelVenta pan) {
         vista = v;
@@ -38,10 +41,11 @@ public class ControladorNuevaVenta implements ActionListener {
         panel.jbtnSaberMas.addActionListener(this);
         panel.jbtnDelete.addActionListener(this);
         panel.jbtnClear.addActionListener(this);
-        modelo = new DefaultTableModel(null, FormatoNuevaVenta.titulosTabla);
+        modelo = new DefaultTableModel(null, titulosTabla);
         panel.jtblCompras.setModel(modelo);
         utils.ManejadorTabla.formatoTablaBoleta(panel.jtblCompras);
-        FormatoNuevaVenta.Presentacion(vista, panel);
+        FormatoNuevaVenta.startBoletaValues(vista, panel);
+        FrameUtils.showPanel(vista, panel);
         panel.jtxtDniBusqueda.requestFocus();
     }
     

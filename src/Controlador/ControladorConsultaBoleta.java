@@ -1,4 +1,5 @@
 package Controlador;
+import utils.Messages;
 import utils.ManejadorTabla;
 import DAO.*;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,7 @@ import Vista.*;
 import java.awt.Color;
 import java.util.Collections;
 import javax.swing.table.DefaultTableModel;
+import utils.FrameUtils;
 
 public class ControladorConsultaBoleta implements ActionListener {
     ConsultarBoleta panel;
@@ -17,15 +19,16 @@ public class ControladorConsultaBoleta implements ActionListener {
     CRUDClientes crudCliente = new CRUDClientes();
     CRUDBoleta crudBoleta = new CRUDBoleta();
     boolean band;
+    public static String[] titulos = {"Nro Boleta", "Fecha", "Monto"};
     
     public ControladorConsultaBoleta(VentanaPrincipal vista, ConsultarBoleta pan, boolean flag) {
         panel = pan;
-        modelo = new DefaultTableModel(null, FormatoConsultarBoleta.titulos);
+        modelo = new DefaultTableModel(null, titulos);
         panel.jbtnBuscarBoletas.addActionListener(this);
         panel.jtblTablaBoletas.setModel(modelo);
         ManejadorTabla.formatoTablaConsultarBoleta(panel.jtblTablaBoletas);
         panel.jtblTablaBoletas.setBackground(Color.WHITE);
-        FormatoConsultarBoleta.Presentacion(vista, panel);
+        FrameUtils.showPanel(vista, panel);
         panel.jtxtDniCliente.requestFocus();
         if (flag) {
             panel.jtxtDniCliente.setEnabled(false);

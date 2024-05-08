@@ -1,6 +1,6 @@
 package DAO;
 
-import Formato.Messages;
+import utils.Messages;
 import Modelo.Boleta;
 import Principal.Main;
 import java.text.SimpleDateFormat;

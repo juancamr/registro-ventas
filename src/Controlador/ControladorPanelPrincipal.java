@@ -3,12 +3,12 @@ import Formato.FormatoNuevaVenta;
 import Vista.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import Formato.FormatoPanelPrincipal;
-import Formato.Messages;
+import utils.Messages;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import utils.FrameUtils;
 
 public class ControladorPanelPrincipal implements ActionListener {
     public static VentanaPrincipal vista;
@@ -36,7 +36,10 @@ public class ControladorPanelPrincipal implements ActionListener {
     }
     
     public void screen() {
-        FormatoPanelPrincipal.Presentacion(vista);
+        vista.setSize(1076, 825);
+        vista.setTitle("Servimotos");
+        vista.setLocationRelativeTo(vista);
+        vista.setVisible(true);
     }
     
     public static void quitarFondosBotones() {
@@ -106,7 +109,9 @@ public class ControladorPanelPrincipal implements ActionListener {
             if (ControladorNuevaVenta.getPanelVenta() == null) {
                 new ControladorNuevaVenta(vista, new PanelVenta());
             } else {
-                FormatoNuevaVenta.Presentacion(vista, ControladorNuevaVenta.getPanelVenta());
+                PanelVenta panel = ControladorNuevaVenta.getPanelVenta();
+                FormatoNuevaVenta.startBoletaValues(vista, panel);
+                FrameUtils.showPanel(vista, panel);
             }
             setFocusButton(vista.jbtnNuevaVenta, vista.jlblVentaIcon);
         }

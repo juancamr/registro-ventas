@@ -1,5 +1,5 @@
 package DAO;
-import Formato.Messages;
+import utils.Messages;
 import Modelo.*;
 
 public class CRUDProveedor extends ConectarBD {

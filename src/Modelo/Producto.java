@@ -78,7 +78,7 @@ public class Producto {
     }
     
     public Object[] showAll() {
-        Object[] lista = {codigo, nombre, costoUnidad, precioVenta, proveedor, stock};
+        Object[] lista = {codigo, nombre, costoUnidad, precioVenta, proveedor.getNombre(), stock};
         return lista;
     }
 }

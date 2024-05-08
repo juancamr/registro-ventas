@@ -12,11 +12,10 @@ import java.util.Date;
 
 public class FormatoNuevaVenta {
     
-    public static String[] titulosTabla = {"Cantidad", "Descripcion", "Precio Unid.", "Total"};
     static DecimalFormat df;
     static CRUDBoleta crud = new CRUDBoleta();
     
-    public static void Presentacion (VentanaPrincipal vista, PanelVenta panel) {
+    public static void startBoletaValues (VentanaPrincipal vista, PanelVenta panel) {
         Boleta bol = new Boleta();
         panel.jspnCantidad.setValue(1);
         panel.jtxtDireccion.setText(bol.DIRECCION);
@@ -24,13 +23,6 @@ public class FormatoNuevaVenta {
         panel.jtxtRuc.setText(bol.RUC);
         panel.jtxtNumeroBoleta.setText(new DecimalFormat("00000000000").format(crud.obtenerActualIdBoleta() + 1));
         panel.jtxtFecha.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
-        
-        panel.setSize(840, 790);
-        panel.setLocation(0, 0);        
-        vista.content.removeAll();
-        vista.content.add(panel, BorderLayout.CENTER);
-        vista.content.revalidate();
-        vista.content.repaint();
     }
     
     public static boolean isNotCompraRepetida(ArrayList<DetalleBoleta> listaCompras, int idProducto) {
