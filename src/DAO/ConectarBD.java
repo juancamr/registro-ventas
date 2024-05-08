@@ -14,6 +14,8 @@ public class ConectarBD {
             st = connect.createStatement();
         } catch (Exception e) {
             System.out.println(e);
+            System.out.println("No se pudo realizar la conexion a la base de datos");
+            System.exit(0);
         }
     }
 }
