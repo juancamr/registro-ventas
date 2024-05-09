@@ -142,7 +142,7 @@ public class PanelHome extends javax.swing.JPanel {
         jlblRepuestosSinStock = new javax.swing.JLabel();
         jtxtBuscarRepuesto = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jlblNombreAdministrador = new javax.swing.JLabel();
 
         jpnlInterfaz.setBackground(new java.awt.Color(255, 255, 255));
         jpnlInterfaz.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -386,9 +386,9 @@ public class PanelHome extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icon_user.png"))); // NOI18N
         jpnlInterfaz.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Malgun Gothic", 0, 16)); // NOI18N
-        jLabel2.setText("Administrador");
-        jpnlInterfaz.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, -1, 40));
+        jlblNombreAdministrador.setFont(new java.awt.Font("Malgun Gothic", 0, 16)); // NOI18N
+        jlblNombreAdministrador.setText("Administrador");
+        jpnlInterfaz.add(jlblNombreAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -478,7 +478,6 @@ public class PanelHome extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -503,6 +502,7 @@ public class PanelHome extends javax.swing.JPanel {
     private javax.swing.JLabel jlblInventarioIcon;
     private javax.swing.JLabel jlblLastSell;
     private javax.swing.JLabel jlblLupa;
+    public javax.swing.JLabel jlblNombreAdministrador;
     private javax.swing.JLabel jlblPointerIcon;
     public javax.swing.JLabel jlblProducto1;
     public javax.swing.JLabel jlblProducto2;

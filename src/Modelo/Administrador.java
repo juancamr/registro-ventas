@@ -8,6 +8,12 @@ public class Administrador {
     
     public Administrador() {}
     
+    public Administrador(String nombres, String username, String password) {
+        this.nombres = nombres;
+        this.username = username;
+        this.password = password;
+    }
+    
     public String getNombres() {
         return this.nombres;
     }

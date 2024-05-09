@@ -49,6 +49,19 @@ CREATE TABLE IF NOT EXISTS producto (
     constraINT fk_proveedor foreign KEY (id_proveedor) references proveedor(id_proveedor)
 ) Engine=InnoDB;
 
+INSERT INTO producto (codigo, marca, nombre, costo_unidad, precio_venta, stock, indicador)
+VALUES
+    ('REP001', 'Marca1', 'Repuesto1', 10.50, 15.99, 50, 'OK'),
+    ('REP002', 'Marca2', 'Repuesto2', 8.25, 12.99, 30, 'OK'),
+    ('REP003', 'Marca3', 'Repuesto3', 12.75, 19.99, 20, 'OK'),
+    ('REP004', 'Marca1', 'Repuesto4', 9.99, 14.99, 40, 'OK'),
+    ('REP005', 'Marca2', 'Repuesto5', 7.50, 11.99, 60, 'OK'),
+    ('REP006', 'Marca3', 'Repuesto6', 11.25, 16.99, 25, 'OK'),
+    ('REP007', 'Marca1', 'Repuesto7', 13.50, 20.99, 35, 'OK'),
+    ('REP008', 'Marca2', 'Repuesto8', 10.75, 17.99, 45, 'OK'),
+    ('REP009', 'Marca3', 'Repuesto9', 9.25, 13.99, 55, 'OK'),
+    ('REP010', 'Marca1', 'Repuesto10', 8.99, 12.99, 50, 'OK');
+
 CREATE TABLE IF NOT EXISTS detalle_boleta (
     id_detalle_boleta int primary key auto_increment,
     id_producto INT,
@@ -63,6 +76,7 @@ CREATE TABLE IF NOT EXISTS detalle_boleta (
 CREATE TABLE IF NOT EXISTS administrador (
     id_admin INT PRIMARY KEY auto_increment,
     nombres VARCHAR(30), 
-    password VARCHAR(60)
+    username VARCHAR(20) unique key,
+    password VARCHAR(70)
 )
 

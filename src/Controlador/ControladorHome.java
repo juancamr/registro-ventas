@@ -51,6 +51,7 @@ public class ControladorHome implements ActionListener {
         }
         //mostrar la cantidad de repuestos en la base de datos
         panel.jlblInventario.setText(String.valueOf(crudProducto.obtenerCantidadRepuestos()));
+        panel.jlblNombreAdministrador.setText(Main.admin.getNombres());
         //mostrar el monto de la ultima boleta generada
         int idBoleta = crudBoleta.obtenerActualIdBoleta();
         if (idBoleta != 0) {

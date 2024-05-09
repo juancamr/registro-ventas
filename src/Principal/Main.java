@@ -5,6 +5,7 @@ import Modelo.*;
 import Vista.*;
 import Vista.auth.VentanaSesion;
 import java.util.ArrayList;
+import utils.StringUtils;
 
 public class Main {
     
@@ -14,6 +15,8 @@ public class Main {
     public static ArrayList<Reporte> listaReportes;
     public static ArrayList<Proveedor> listaProveedores;
     public static ArrayList<Producto> listaProductosSinStock;
+    
+    public static Administrador admin;
 
     public static void main(String[] Stringargs) {
         new ControladorInicio(new VentanaSesion());

@@ -1,5 +1,6 @@
 package Controlador;
 import Formato.FormatoNuevaVenta;
+import Principal.Main;
 import Vista.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,6 +33,7 @@ public class ControladorPanelPrincipal implements ActionListener {
         vista.jbtnConsultarReporte.addActionListener(this);
         vista.jbtnRepuestos.addActionListener(this);
         vista.jbtnHome.addActionListener(this);
+        vista.jlblNombreAdministrador.setText(Main.admin.getNombres());
         new ControladorHome(vista, new PanelHome());
     }
     

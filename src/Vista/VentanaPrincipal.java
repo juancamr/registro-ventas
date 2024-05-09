@@ -119,8 +119,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             exp.printStackTrace();
         }
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jlblNombreAdministrador = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
 
@@ -441,15 +440,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel6.setText("CONSULTAS");
         jpnlBarra.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Malgun Gothic", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(181, 181, 186));
-        jLabel7.setText("Administrador");
-        jpnlBarra.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 710, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Malgun Gothic", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(181, 181, 186));
-        jLabel8.setText("Administrador");
-        jpnlBarra.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 710, -1, -1));
+        jlblNombreAdministrador.setFont(new java.awt.Font("Malgun Gothic", 0, 14)); // NOI18N
+        jlblNombreAdministrador.setForeground(new java.awt.Color(181, 181, 186));
+        jlblNombreAdministrador.setText("Administrador");
+        jpnlBarra.add(jlblNombreAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 710, 140, -1));
 
         jLabel9.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(181, 181, 186));
@@ -718,8 +712,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JButton jbtnClientes;
     public javax.swing.JButton jbtnConsultarBoleta;
@@ -732,6 +724,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public javax.swing.JLabel jlblConsultaBoleta;
     public javax.swing.JLabel jlblConsultarReporte;
     public javax.swing.JLabel jlblHomeIcon;
+    public javax.swing.JLabel jlblNombreAdministrador;
     public javax.swing.JLabel jlblReporteIcon;
     public javax.swing.JLabel jlblRepuestosIcon;
     public javax.swing.JLabel jlblVentaIcon;
