@@ -5,25 +5,35 @@
 package DAO;
 
 import Modelo.Administrador;
+import Modelo.Response;
 import Principal.Main;
 import utils.Messages;
 
 public class CRUDAdministrador extends ConectarBD {
     
-    public boolean registrar(Administrador admin) {
-        String consulta = "INSERT INTO administrador(nombres, username, password) VALUES(?, ?, ?)";
+    public Response<Administrador> registrar(Administrador admin) {
+        String con = "SELECT * FROM administrador WHERE username='<username>'";
+        con = con.replace("<username>", admin.getUsername());
         try {
-            ps = connect.prepareStatement(consulta);
-            ps.setString(1, admin.getNombres());
-            ps.setString(2, admin.getUsername());
-            ps.setString(3, admin.getPassword());
-            ps.executeUpdate();
-            ps.close();
-            Main.admin = admin;
-            return true;
+            rs = st.executeQuery(con);
+            if (!rs.next()) {
+                String consulta = "INSERT INTO administrador(nombres, username, password) VALUES(?, ?, ?)";
+                try {
+                    ps = connect.prepareStatement(consulta);
+                    ps.setString(1, admin.getNombres());
+                    ps.setString(2, admin.getUsername());
+                    ps.setString(3, admin.getPassword());
+                    ps.executeUpdate();
+                    ps.close();
+                    return new Response(true, "Registro exitoso", admin);
+                } catch (Exception e) {
+                    System.out.println(e);
+                    return new Response(false, "Algo salio mal al registrar al administrador");
+                }
+            } else return new Response(false, "El nombre de usuario se encuentra en uso");
         } catch (Exception e) {
             System.out.println(e);
-            return false;
+            return new Response(false, "Algo salio mal");
         }
     }
     

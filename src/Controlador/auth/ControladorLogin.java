@@ -36,14 +36,19 @@ public class ControladorLogin implements ActionListener {
         if (e.getSource() == panel.jbtnIniciar) {
             String userName = panel.jtxtNombreUsuario.getText();
             String password = String.valueOf(panel.jPassword.getPassword());
-            password = StringUtils.sha256(password);
-            boolean adminExist = crudAdministrador.verificar(userName, password);
-            if (adminExist) {
-                vista.dispose();
-                new ControladorPanelPrincipal(new VentanaPrincipal()).screen();
-            } else {
-                Messages.show("Credenciales incorrectas");
-            }
+            
+            if (!userName.equals("") || !password.equals("")) {
+                System.out.println(userName);
+                System.out.println(password);
+                password = StringUtils.sha256(password);
+                boolean adminExist = crudAdministrador.verificar(userName, password);
+                if (adminExist) {
+                    vista.dispose();
+                    new ControladorPanelPrincipal(new VentanaPrincipal()).screen();
+                } else {
+                    Messages.show("Credenciales incorrectas");
+                }
+            } else Messages.show("Complete todos los campos");
         }
     }
     

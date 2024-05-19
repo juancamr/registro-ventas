@@ -3,6 +3,7 @@ package Controlador.auth;
 import Controlador.ControladorPanelPrincipal;
 import DAO.CRUDAdministrador;
 import Modelo.Administrador;
+import Modelo.Response;
 import Vista.VentanaPrincipal;
 import Vista.auth.PanelLogin;
 import Vista.auth.PanelRegister;
@@ -34,17 +35,27 @@ public class ControladorRegistro implements ActionListener {
         }
 
         if (e.getSource() == panel.jbtnRegistro) {
+            String usernameRegex = "^[a-z]{3,15}$";
+            String passwordRegex = "^[a-z]{8,}$";
+            
             String nombres = panel.jtxtNombresCompletos.getText();
             String userName = panel.jtxtNombreUsuario.getText();
             String password = String.valueOf(panel.jPassword.getPassword());
-            password = StringUtils.sha256(password);
-            boolean success = crudAdministrador.registrar(new Administrador(nombres, userName, password));
-            if (success) {
-                vista.dispose();
-                new ControladorPanelPrincipal(new VentanaPrincipal()).screen();
-            } else {
-                Messages.show("Error al intentar registrar");
-            }
+            
+            if (!userName.isEmpty() || !password.isEmpty() || !nombres.isEmpty()) {
+                if (userName.matches(usernameRegex)) {
+                   if (password.matches(passwordRegex)) {
+                       password = StringUtils.sha256(password);
+                       Response<Administrador> response = crudAdministrador.registrar(new Administrador(nombres, userName, password));
+                       
+                       if (response.isSuccess()) {
+                           vista.dispose();
+                           new ControladorPanelPrincipal(new VentanaPrincipal()).screen();
+                       }
+                       Messages.show(response.getMessage());
+                   } else Messages.show("Contraseña invalida, recuerda que debe ser almenos de 8 caracteres");
+                } else Messages.show("Ingrese un nombre de usuario valido");
+            } else Messages.show("Complete todos los campos");
         }
     }
 
