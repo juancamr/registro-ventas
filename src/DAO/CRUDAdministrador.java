@@ -19,6 +19,7 @@ public class CRUDAdministrador extends ConectarBD {
             ps.setString(3, admin.getPassword());
             ps.executeUpdate();
             ps.close();
+            Main.admin = admin;
             return true;
         } catch (Exception e) {
             System.out.println(e);
@@ -37,8 +38,10 @@ public class CRUDAdministrador extends ConectarBD {
             if (rs.next()) {
                 admin.setNombres(rs.getString(1));
                 Main.admin = admin;
+                return true;
+            } else {
+                return false;
             }
-            return true;
         } catch (Exception e) {
             System.out.println(e);
             return false;

@@ -2,6 +2,8 @@ package Controlador.auth;
 
 import Controlador.ControladorPanelPrincipal;
 import DAO.CRUDAdministrador;
+import Modelo.Administrador;
+import Principal.Main;
 import Vista.VentanaPrincipal;
 import Vista.auth.PanelLogin;
 import Vista.auth.PanelRegister;
@@ -35,8 +37,9 @@ public class ControladorLogin implements ActionListener {
             String userName = panel.jtxtNombreUsuario.getText();
             String password = String.valueOf(panel.jPassword.getPassword());
             password = StringUtils.sha256(password);
-            boolean userExist = crudAdministrador.verificar(userName, password);
-            if (userExist) {
+            boolean adminExist = crudAdministrador.verificar(userName, password);
+            if (adminExist) {
+                if (Main.admin == null) System.out.println("something went wrong");
                 vista.dispose();
                 new ControladorPanelPrincipal(new VentanaPrincipal()).screen();
             } else {

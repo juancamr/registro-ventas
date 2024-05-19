@@ -4,6 +4,8 @@
  */
 package Vista.auth;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author jcmro
@@ -89,6 +91,12 @@ public class PanelLogin extends javax.swing.JPanel {
 
         jSeparator17.setForeground(new java.awt.Color(0, 0, 0));
         jPanel3.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 300, 10));
+
+        jPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jPasswordKeyReleased(evt);
+            }
+        });
         jPanel3.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 300, 30));
 
         jbtnRegistro.setBackground(new java.awt.Color(255, 255, 254));
@@ -101,7 +109,7 @@ public class PanelLogin extends javax.swing.JPanel {
                 jbtnRegistroActionPerformed(evt);
             }
         });
-        jPanel3.add(jbtnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 190, 30));
+        jPanel3.add(jbtnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 300, 30));
 
         jSeparator14.setForeground(new java.awt.Color(0, 0, 0));
         jPanel3.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 300, 10));
@@ -120,6 +128,10 @@ public class PanelLogin extends javax.swing.JPanel {
     private void jbtnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnRegistroActionPerformed
+
+    private void jPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordKeyReleased
+        
+    }//GEN-LAST:event_jPasswordKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

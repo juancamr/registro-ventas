@@ -122,7 +122,7 @@ public class PanelRegister extends javax.swing.JPanel {
                 jbtnInicioSesionActionPerformed(evt);
             }
         });
-        jPanel3.add(jbtnInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 190, 30));
+        jPanel3.add(jbtnInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 300, 30));
 
         jSeparator15.setForeground(new java.awt.Color(0, 102, 255));
         jPanel3.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 190, 30));

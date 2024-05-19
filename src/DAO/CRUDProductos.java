@@ -180,7 +180,7 @@ public class CRUDProductos extends ConectarBD {
     
     public List<Producto> getAllProducts() {
         List<Producto> listaProductos = new ArrayList();
-        String consulta = "SELECT * FROM producto WHERE indicador='S'";
+        String consulta = "SELECT * FROM producto";
         
         try {
             CRUDProveedor crud = new CRUDProveedor();

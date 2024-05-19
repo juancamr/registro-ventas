@@ -21,13 +21,17 @@ public final class ControladorVentanaProducto implements ActionListener {
     CRUDProductos crudProducto = new CRUDProductos();
     DefaultTableModel modelo;
     public String[] titulosTabla = {"Código", "Nombre", "Precio Costo", "Precio venta", "Proveedor", "Stock"};
-    List<Producto> listaProductos = crudProducto.getAllProducts();
+    List<Producto> listaProductos;
     
     public ControladorVentanaProducto(VentanaProductos v) {
         vista = v;
         JTextField inputCodigo = vista.jtxtCodigoBusqueda;
         modelo = new DefaultTableModel(null, titulosTabla);
         vista.jtblProductos.setModel(modelo);
+        listaProductos = crudProducto.getAllProducts();
+        System.out.println(listaProductos);
+        setDataInTable(listaProductos);
+        utils.TablaUtils.formatoTablaTodosLosProductos(vista.jtblProductos);
         inputCodigo.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void changedUpdate(DocumentEvent e) {
@@ -52,8 +56,6 @@ public final class ControladorVentanaProducto implements ActionListener {
                 setDataInTable(listaProductos);
             }
         });
-        setDataInTable(listaProductos);
-        utils.TablaUtils.formatoTablaTodosLosProductos(vista.jtblProductos);
         FrameUtils.showWindow(vista, "Buscar productos");
     }
     

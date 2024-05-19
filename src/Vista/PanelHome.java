@@ -143,6 +143,7 @@ public class PanelHome extends javax.swing.JPanel {
         jtxtBuscarRepuesto = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jlblNombreAdministrador = new javax.swing.JLabel();
+        jbtnCerrarSesion = new javax.swing.JButton();
 
         jpnlInterfaz.setBackground(new java.awt.Color(255, 255, 255));
         jpnlInterfaz.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -390,6 +391,19 @@ public class PanelHome extends javax.swing.JPanel {
         jlblNombreAdministrador.setText("Administrador");
         jpnlInterfaz.add(jlblNombreAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 150, 40));
 
+        jbtnCerrarSesion.setBackground(new java.awt.Color(255, 255, 254));
+        jbtnCerrarSesion.setFont(new java.awt.Font("Malgun Gothic", 0, 12)); // NOI18N
+        jbtnCerrarSesion.setForeground(new java.awt.Color(204, 0, 51));
+        jbtnCerrarSesion.setText("Cerrar sesión");
+        jbtnCerrarSesion.setBorder(null);
+        jbtnCerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jbtnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnCerrarSesionActionPerformed(evt);
+            }
+        });
+        jpnlInterfaz.add(jbtnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 150, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -472,6 +486,10 @@ public class PanelHome extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jPanel6MouseClicked
 
+    private void jbtnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnCerrarSesionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -494,6 +512,7 @@ public class PanelHome extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    public javax.swing.JButton jbtnCerrarSesion;
     public javax.swing.JLabel jlblCheck;
     private javax.swing.JLabel jlblDollarIcon;
     public javax.swing.JLabel jlblIngresoDiario;

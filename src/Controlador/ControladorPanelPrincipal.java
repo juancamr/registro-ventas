@@ -128,28 +128,16 @@ public class ControladorPanelPrincipal implements ActionListener {
         if (e.getSource() == vista.jbtnReporteDia) {
             setFocusButton(vista.jbtnReporteDia, vista.jlblReporteIcon);
             panelReporte = 0;
-            new VentanaPass();
+            new ControladorReporteDia(vista, new PanelReporteDia());
         }
         if (e.getSource() == vista.jbtnConsultarReporte) {
             setFocusButton(vista.jbtnConsultarReporte, vista.jlblConsultarReporte);
             panelReporte = 1;
-            new VentanaPass();
+            new ControladorConsultarReporte(vista, new ConsultarReporte());
         }        
         if (e.getSource() == vista.jbtnRepuestos) {
             new ControladorProducto(vista, new PanelProducto(), false, "");
             setFocusButton(vista.jbtnRepuestos, vista.jlblRepuestosIcon);
         }        
-    }
-    public static void openPanelReporteDia() {
-        if (isCorrectPassword) {
-            new ControladorReporteDia(vista, new PanelReporteDia());
-            isCorrectPassword = false;
-        }
-    }
-    public static void openPanelConsultarReporte() {
-        if (isCorrectPassword) {
-            new ControladorConsultarReporte(vista, new ConsultarReporte());
-            isCorrectPassword = false;
-        }
     }
 }

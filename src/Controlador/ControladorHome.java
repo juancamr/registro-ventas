@@ -1,10 +1,14 @@
 package Controlador;
+import Controlador.auth.ControladorInicio;
+import Controlador.auth.ControladorLogin;
 import DAO.CRUDBoleta;
 import DAO.CRUDProductos;
 import DAO.CRUDReporte;
 import Principal.Main;
 import Vista.PanelHome;
 import Vista.VentanaPrincipal;
+import Vista.auth.PanelLogin;
+import Vista.auth.VentanaSesion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -21,6 +25,9 @@ public class ControladorHome implements ActionListener {
     public ControladorHome(VentanaPrincipal v, PanelHome pan) {
         panel = pan;
         vista = v;
+        
+        panel.jbtnCerrarSesion.addActionListener(this);
+        
         //mostrar ingreso diario
         int idReporte = crudReporte.obtenerIdReporteToday();
         if (idReporte != 0) {
@@ -66,6 +73,11 @@ public class ControladorHome implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == panel.jbtnCerrarSesion) {
+            vista.dispose();
+            Main.admin = null;
+            new ControladorInicio(new VentanaSesion());
+        }
     }
     
 }
