@@ -40,7 +40,7 @@ public class ControladorRegistro implements ActionListener {
             password = StringUtils.sha256(password);
             boolean success = crudAdministrador.registrar(new Administrador(nombres, userName, password));
             if (success) {
-                System.out.println("perfecto");
+                vista.dispose();
                 new ControladorPanelPrincipal(new VentanaPrincipal()).screen();
             } else {
                 Messages.show("Error al intentar registrar");

@@ -39,7 +39,6 @@ public class ControladorLogin implements ActionListener {
             password = StringUtils.sha256(password);
             boolean adminExist = crudAdministrador.verificar(userName, password);
             if (adminExist) {
-                if (Main.admin == null) System.out.println("something went wrong");
                 vista.dispose();
                 new ControladorPanelPrincipal(new VentanaPrincipal()).screen();
             } else {
