@@ -21,5 +21,4 @@ public class Main {
     public static void main(String[] Stringargs) {
         new ControladorInicio(new VentanaSesion());
     }
-    
 }

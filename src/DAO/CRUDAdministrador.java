@@ -25,6 +25,7 @@ public class CRUDAdministrador extends ConectarBD {
                     ps.setString(3, admin.getPassword());
                     ps.executeUpdate();
                     ps.close();
+                    Main.admin = admin;
                     return new Response(true, "Registro exitoso", admin);
                 } catch (Exception e) {
                     System.out.println(e);
